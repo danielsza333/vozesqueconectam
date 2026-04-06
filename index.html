@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vozes que Conectam | Portal TEA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;700&family=Shrikhand&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button class="acc-float" onclick="toggleSoftMode()" title="Alternar Contraste">👁️</button>
+
+    <div class="container">
+        <header>
+            <h1 class="title-big">VOZES QUE<br>CONECTAM</h1>
+            <p class="subtitle">CONSCIENTIZAÇÃO BASEADA EM EVIDÊNCIAS</p>
+        </header>
+
+        <nav class="nav">
+            <button onclick="trocarAba(event, 'inicio')" class="active">🏠 Início</button>
+            <button onclick="trocarAba(event, 'conhecimento')">🧩 Guia TEA</button>
+            <button onclick="trocarAba(event, 'relatos')">📩 Enviar Relato</button>
+            <button onclick="trocarAba(event, 'quiz')">🎮 Quiz</button>
+        </nav>
+
+        <section id="inicio" class="section active">
+            <div class="hero-card">
+                <h2>O que é o Autismo Real?</h2>
+                <p>O Transtorno do Espectro Autista (TEA) resulta de alterações no desenvolvimento cerebral. Não é uma doença mental, nem culpa dos pais, nem falta de disciplina. É uma forma diferente de processar o mundo.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>💡 Neurodiversidade</h3>
+                    <p>O foco hoje é entender que o cérebro autista tem uma "fiação" única, com habilidades e desafios que variam imensamente entre cada indivíduo.</p>
+                </div>
+                <div class="card">
+                    <h3>🔍 Prevalência</h3>
+                    <p>Estimativas sugerem que 1% da população mundial está no espectro. O diagnóstico precoce é a chave para uma melhor qualidade de vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conhecimento" class="section">
+            <h2 class="section-title">Informações e Realidade</h2>
+            
+            <div class="card main-info">
+                <h3>🚩 Sinais Precoces (Fique Atento)</h3>
+                <p>Muitos sinais aparecem antes dos 2 anos. Identificá-los permite intervenções que mudam o futuro da criança:</p>
+                <ul class="info-list">
+                    <li>Dificuldade em manter contato visual sustentado.</li>
+                    <li>Não responder quando chamado pelo nome (parece surdez, mas não é).</li>
+                    <li>Atraso na fala ou repetição de frases fora de contexto (ecolalia).</li>
+                    <li>Interesse intenso por partes de objetos (ex: girar a rodinha de um carrinho).</li>
+                    <li>Apego rígido a rotinas e crises diante de mudanças mínimas.</li>
+                </ul>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>🩺 O Diagnóstico</h3>
+                    <p>Não existe exame de sangue para o autismo. O diagnóstico é <strong>clínico e multiprofissional</strong>, feito por médicos, psicólogos e fonoaudiólogos através da observação do comportamento.</p>
+                </div>
+                <div class="card">
+                    <h3>⚖️ Direitos e Cidadania</h3>
+                    <p>No Brasil, a Lei Berenice Piana (12.764/12) garante que o autista seja considerado pessoa com deficiência para todos os efeitos legais, garantindo acesso à saúde, educação e proteção social.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="relatos" class="section">
+            <div class="message-box">
+                <h3>❤️ Para você, Pai, Mãe ou Autista</h3>
+                <p>Sabemos que a jornada pode ser solitária e desafiadora, mas você não está sozinho. Sua voz tem valor. Este espaço é um canal direto com nossa equipe para coleta de dados e suporte ao projeto.</p>
+                <p><strong>Privacidade garantida:</strong> Seus dados serão enviados apenas ao nosso banco de dados interno e <u>não serão exibidos publicamente</u>.</p>
+            </div>
+
+            <div class="card relato-form">
+                <div class="form-group">
+                    <label>Nome Completo:</label>
+                    <input id="nome" type="text" placeholder="Como prefere ser chamado?">
+                    
+                    <label>Categoria:</label>
+                    <select id="categoria">
+                        <option value="pais">Sou pai/mãe/responsável</option>
+                        <option value="autista">Sou pessoa autista</option>
+                        <option value="outro">Outro</option>
+                    </select>
+
+                    <label>Sua Experiência:</label>
+                    <textarea id="msg" rows="6" placeholder="Conte-nos sobre sua jornada, dúvidas ou sugestões..."></textarea>
+                    
+                    <button id="btnEnviar" onclick="enviarParaBanco()" class="btn-send">
+                        <span id="btnTxt">Enviar</span> 
+                    </button>
+                    <p id="feedback" class="feedback-msg"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section">
+            <h2 class="section-title">Teste de Conhecimento</h2>
+            <div class="card" id="quizBox"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>Vozes que Conectam</strong> &copy; 2026</p>
+        <p>Baseado em diretrizes do portal Autismo e Realidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
